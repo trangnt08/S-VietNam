@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :votes
+  resources :likes
+  resources :kuchikomis
+  resources :meibutus
+  resources :profiles
+  resources :images
   get 'sessions/new'
 
   root 'sessions#new'

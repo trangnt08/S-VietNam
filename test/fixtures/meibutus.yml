@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  speciatly_id: 1
+  specialty_name: MyString
+  specialty_picture: MyString
+
+two:
+  speciatly_id: 1
+  specialty_name: MyString
+  specialty_picture: MyString
