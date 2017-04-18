@@ -38748,3 +38748,5 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 79ms (Views: 74.1ms | ActiveRecord: 0.5ms)
 
 
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from env_config at /usr/local/rvm/gems/ruby-2.3.0/gems/railties-5.0.2/lib/rails/application.rb:246)
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from env_config at /usr/local/rvm/gems/ruby-2.3.0/gems/railties-5.0.2/lib/rails/application.rb:246)
