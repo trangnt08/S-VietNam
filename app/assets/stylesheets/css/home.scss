@@ -42,7 +42,7 @@ h2.title {
 /* tỉ lệ % độ lớn của ảnh*/
 .productinfo img{
   height: 230px;
-  width: auto;
+  width: 210px;
 }
 
 .productinfo{
@@ -61,7 +61,7 @@ div.polaroid {
 }
 .saigo{
   height: 230px;
-  width: 180px;
+  width: 200px;
   margin: auto;
   background-size: 180px 230px;
 }
@@ -81,3 +81,10 @@ div.margin-top{
 .margin{
   margin: 60px 0px 10px 0px;
 }
+
+.linh>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 1px !important;
+}
+
