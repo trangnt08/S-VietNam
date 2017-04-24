@@ -1,3 +1,187 @@
 // Place all the styles related to the Images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin background-tile {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px 6px #ccc;
+}
+body.scroll {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}.col-sm-2 {
+  margin-left: 1.5em;
+  margin-right: 1em;
+}
+.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+// .post_form{
+//     background-color: #f1f1f1;
+//     padding: 0.01em 400px;
+// }
+.new-post-form {
+	@include background-tile;
+	padding: 1.5em 1.25em;
+
+	h1 {
+		margin-top: 100;
+	}
+
+	#category_id {
+		margin-bottom: 10px;
+	}
+
+	#book_book_img {
+		margin-bottom: 10px;
+	}
+
+}
+.show-list-pic{
+ @include background-tile;
+ padding: 1em 3.5em;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 5px 15px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.img1 {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    // margin-bottom: 20px;
+    width: 155px;
+    height: 105px;
+}
+.img2 {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 155px;
+    height: 105px;
+}
+.none-img {
+  width: 0;
+  height: 0;
+}
+img {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    // margin-bottom: 15px;
+    z-index: auto;
+}
+
+.img-preview {
+  width: 150px;
+  height: 100px;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+.contain {
+  position: relative;
+  width: 120px;
+}
+
+// .overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   color: #FFF;
+//   background: rgba(0, 0, 0, 0);
+//   transition: background 0.5s ease;
+// }
+// .container:hover .overlay {
+//   display: block;
+//   background: rgba(0, 0, 0, .3);
+// }
+
+.button-remove {
+  position: absolute;
+  width: 20px;
+  margin-left: 120px;
+  top: 10px;
+  text-align: center;
+  background-color: #ebebeb;
+  opacity: 0;
+  cursor: default;
+  border-radius: 50%;
+  border-radius: 50%;
+  transition: opacity .35s ease;
+}
+
+// button :hover{
+//     background-color: #cc99cc;;
+//     color: #34DDDD;
+//     text-decoration: none;
+// }
+
+// .button a {
+//   width: 20px;
+//   padding: 0px 4px;
+//   text-align: center;
+//   color: white;
+//   background-color: #ebebeb;
+//   border: solid 2px white;
+//   border-radius: 50%;
+// }
+
+.contain:hover .button-remove {
+  opacity: 1;
+}
+input[type="file"] {
+  display: block;
+}
+.imageThumb {
+  max-height: 75px;
+  border: 2px solid;
+  padding: 1px;
+  cursor: pointer;
+}
+.pip {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+}
+.remove {
+  display: block;
+  background: #444;
+  border: 1px solid black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.remove:hover {
+  background: white;
+  color: black;
+}

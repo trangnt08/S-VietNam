@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'devise'
 gem 'carrierwave'
+gem "jquery-fileupload-rails"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bcrypt', '3.1.11'
 # Use sqlite3 as the database for Active Record

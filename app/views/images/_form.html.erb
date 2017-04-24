@@ -11,45 +11,87 @@
     </div>
   <% end %>
 
-  <!--<div class="field">-->
-  <!--  <%= f.label :user_id %>-->
-  <!--  <%= f.number_field :user_id %>-->
-  <!--</div>-->
+  <styles type ="text/css">
+    
+  </styles>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :value =>"Title" %>
+  </div>
+  
+  <div class="contain">
+    <div class="img2">
+      <!--<div class="none-img">-->
+        
+      <!--</div>-->
+    <!--<div class="img1">-->
+    <!--  <img id="scenery_picture" class="img-preview"/>-->
+    <!--      <span class="button-remove">x</span>-->
+    <!--</div>-->
+    </div>
+    <%= f.file_field :scenery_picture, :onchange =>"loadFile(event)" %>
+    <!--<%= f.file_field :scenery_picture, :onchange =>"document.getElementById('scenery_picture').src = window.URL.createObjectURL(this.files[0])"%>-->
+    
+  </div>
+  
+
+  
+  <script>
+    $(document).ready(function(){
+    $(".button-remove").click(function(){
+      $(this).parent(".img1").remove();
+        // $("img").remove();
+    });
+});
+  </script>
+
+  <div class="field" id="aaa">
+    <%= f.text_field :scenery_name, :value =>"景色名" %>
+  </div>
+  <div class="button1">Button</div>
+  <div class="field">
+    <%= f.text_field :scenery_address, :value =>"景色の住所" %>
   </div>
 
-  <div class="field">
-    <%= f.label :scenery_name %>
-    <%= f.text_field :scenery_name %>
-  </div>
+  <!--<img id="scenery_picture" alt="your image" width="150" height="100" />-->
+  <!--<input type="file" -->
+  <!--  onchange="document.getElementById('scenery_picture').src = window.URL.createObjectURL(this.files[0])">-->
+    
+    <!--<input type="file" accept="image/*" onchange="loadFile(event)">-->
+<!--<img id="output"/>-->
+<script>
+  var loadFile = function(event) {
+    var text = "<div class=\"img1\"><img id=\"scenery_picture\" class=\"img-preview\"/><br/><span class=\"button-remove\">x</span></div>";
+    $(".img2").html(text);
+    var reader = new FileReader();
+    reader.onload = function(){
+      // var file = event.target.files;
+      var output = document.getElementById('scenery_picture');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+    $(".button-remove").click(function(){
+            $(this).parent(".img1").remove();
+          });
+  };
+</script>
 
-  <div class="field">
-    <%= f.label :scenery_address %>
-    <%= f.text_field :scenery_address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :scenery_picture %>
-    <%= f.file_field :scenery_picture %>
-  </div>
 
   <div class="field">
     <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
 
-  <div class="field">
-    <%= f.label :vote_counts %>
-    <%= f.number_field :vote_counts %>
-  </div>
+  
+  <!--<div class="field">-->
+  <!--  <%= f.label :vote_counts %>-->
+  <!--  <%= f.number_field :vote_counts %>-->
+  <!--</div>-->
 
-  <div class="field">
-    <%= f.label :scenery_votepoint %>
-    <%= f.text_field :scenery_votepoint %>
-  </div>
+  <!--<div class="field">-->
+  <!--  <%= f.label :scenery_votepoint %>-->
+  <!--  <%= f.text_field :scenery_votepoint %>-->
+  <!--</div>-->
 
   <div class="actions">
     <%= f.submit "投稿する"%>
