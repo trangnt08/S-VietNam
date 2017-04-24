@@ -27,8 +27,8 @@
         <% @images.each do |image| %>
         <div class="show-list-pic">
           <%= image.title %></br>
-          景色名: <%= image.scenery_name %></br>
-          景色の住所: <%= image.scenery_address %>
+          Name: <%= image.scenery_name %></br>
+          Address: <%= image.scenery_address %>
           <p><%= image.description %></p>
           <%= image_tag image.scenery_picture, :width =>'500', :height =>'auto' %><br/>
           <%= link_to 'Show', image %>
