@@ -16,7 +16,7 @@
   </styles>
 
   <div class="field">
-    <%= f.text_field :title, :value =>"Title" %>
+    <%= f.text_field :title, :placeholder =>"Title" %>
   </div>
   
   <div class="contain">
@@ -46,11 +46,11 @@
   </script>
 
   <div class="field" id="aaa">
-    <%= f.text_field :scenery_name, :value =>"景色名" %>
+    <%= f.text_field :scenery_name, :placeholder =>"Name" %>
   </div>
-  <div class="button1">Button</div>
+
   <div class="field">
-    <%= f.text_field :scenery_address, :value =>"景色の住所" %>
+    <%= f.text_field :scenery_address, :placeholder =>"Address" %>
   </div>
 
   <!--<img id="scenery_picture" alt="your image" width="150" height="100" />-->
@@ -78,8 +78,7 @@
 
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :placeholder =>"Description" %>
   </div>
 
   
@@ -94,6 +93,6 @@
   <!--</div>-->
 
   <div class="actions">
-    <%= f.submit "投稿する"%>
+    <%= f.submit "Post"%>
   </div>
 <% end %>
