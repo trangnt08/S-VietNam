@@ -1,0 +1,98 @@
+<%= form_for(image, {multipart: true}) do |f| %>
+  <% if image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <styles type ="text/css">
+    
+  </styles>
+
+  <div class="field">
+    <%= f.text_field :title, :placeholder =>"Title" %>
+  </div>
+  
+  <div class="contain">
+    <div class="img2">
+      <!--<div class="none-img">-->
+        
+      <!--</div>-->
+    <!--<div class="img1">-->
+    <!--  <img id="scenery_picture" class="img-preview"/>-->
+    <!--      <span class="button-remove">x</span>-->
+    <!--</div>-->
+    </div>
+    <%= f.file_field :scenery_picture, :onchange =>"loadFile(event)" %>
+    <!--<%= f.file_field :scenery_picture, :onchange =>"document.getElementById('scenery_picture').src = window.URL.createObjectURL(this.files[0])"%>-->
+    
+  </div>
+  
+
+  
+  <script>
+    $(document).ready(function(){
+    $(".button-remove").click(function(){
+      $(this).parent(".img1").remove();
+        // $("img").remove();
+    });
+});
+  </script>
+
+  <div class="field" id="aaa">
+    <%= f.text_field :scenery_name, :placeholder =>"Name" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :scenery_address, :placeholder =>"Address" %>
+  </div>
+
+  <!--<img id="scenery_picture" alt="your image" width="150" height="100" />-->
+  <!--<input type="file" -->
+  <!--  onchange="document.getElementById('scenery_picture').src = window.URL.createObjectURL(this.files[0])">-->
+    
+    <!--<input type="file" accept="image/*" onchange="loadFile(event)">-->
+<!--<img id="output"/>-->
+<script>
+  var loadFile = function(event) {
+    var text = "<div class=\"img1\"><img id=\"scenery_picture\" class=\"img-preview\"/><br/><span class=\"button-remove\">x</span></div>";
+    $(".img2").html(text);
+    var reader = new FileReader();
+    reader.onload = function(){
+      // var file = event.target.files;
+      var output = document.getElementById('scenery_picture');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+    $(".button-remove").click(function(){
+            $(this).parent(".img1").remove();
+          });
+  };
+</script>
+
+
+  <div class="field">
+    <%= f.text_field :description, :placeholder =>"Description" %>
+  </div>
+
+  
+  <!--<div class="field">-->
+  <!--  <%= f.label :vote_counts %>-->
+  <!--  <%= f.number_field :vote_counts %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+  <!--  <%= f.label :scenery_votepoint %>-->
+  <!--  <%= f.text_field :scenery_votepoint %>-->
+  <!--</div>-->
+
+  <div class="actions">
+    <%= f.submit "Post"%>
+  </div>
+<% end %>
