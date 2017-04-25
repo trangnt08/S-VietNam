@@ -88,3 +88,17 @@ div.margin-top{
     padding: 10px 1px !important;
 }
 
+.form-search {
+  position: relative;
+  
+  .search {
+    position: absolute;
+    top: 13px;
+    right: 5px;
+  }
+  
+}
+
+.oneline {
+  height: 25px;
+}
