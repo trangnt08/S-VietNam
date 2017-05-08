@@ -7,4 +7,9 @@ class Image < ActiveRecord::Base
         where("scenery_name LIKE :search OR scenery_address LIKE :search", search:"%#{search}%")
       end
     end
+    def self.northern(add)
+      if add
+         where scenery_address: add
+      end
+    end
 end
