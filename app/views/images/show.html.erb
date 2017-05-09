@@ -11,7 +11,7 @@
     <div class="col-sm-7 text-left">
       <p>
         <strong>User:</strong>
-        <%= @image.user_id %>
+        <%= @image.user.email %>
       </p>
       
       <h2 class="title text-center">
@@ -49,6 +49,20 @@
       </p>
       <p><strong><%= link_to 'Edit', edit_image_path(@image) %> |
           <%= link_to 'Back', images_path %></strong></p>
+      
+      <button id="like" class="heart" onclick="myFunction()">
+      </button>
+      
+      <script>
+        function myFunction() {
+            document.getElementById("like").style.backgroundImage = "url(https://s.w.org/images/core/emoji/2.2.1/svg/2764.svg)"
+        }
+      </script>
+      <!--<aura:component >-->
+      <!--<input id="toggle-heart" type="checkbox" />-->
+      <!--<label for="toggle-heart"><img draggable="false" class="emoji" alt="❤" src="https://s.w.org/images/core/emoji/2.2.1/svg/2764.svg"></label>-->
+      <!--</aura:component>-->
+
     </div>
   </div>
 </div>

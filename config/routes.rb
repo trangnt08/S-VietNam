@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :image_likes
   get 'password_resets/new'
 
   get 'password_resets/edit'
