@@ -10,6 +10,7 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
+    @image_comment = ImageComment.new
   end
 
   # GET /images/new
@@ -25,6 +26,7 @@ class ImagesController < ApplicationController
   # POST /images.json
   def create
     @image = Image.new(image_params)
+    @image.user_id = current_user.id
 
     respond_to do |format|
       if @image.save
