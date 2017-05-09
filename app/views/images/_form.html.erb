@@ -1,6 +1,6 @@
 <%= form_for(image, {multipart: true}) do |f| %>
   <% if image.errors.any? %>
-    <div id="error_explanation">
+    <div class="trang" id="error_explanation">
       <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
 
       <ul>
@@ -21,13 +21,6 @@
   
   <div class="contain">
     <div class="img2">
-      <!--<div class="none-img">-->
-        
-      <!--</div>-->
-    <!--<div class="img1">-->
-    <!--  <img id="scenery_picture" class="img-preview"/>-->
-    <!--      <span class="button-remove">x</span>-->
-    <!--</div>-->
     </div>
     <%= f.file_field :scenery_picture, :onchange =>"loadFile(event)" %>
     <!--<%= f.file_field :scenery_picture, :onchange =>"document.getElementById('scenery_picture').src = window.URL.createObjectURL(this.files[0])"%>-->

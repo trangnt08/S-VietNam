@@ -13,7 +13,7 @@
   
 </head>
 
-<body>
+<body class="scroll">
  
 <hr>
 <div class="container">
@@ -27,22 +27,22 @@
                                     class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Northern</a>
+                                    <%= link_to"Northern", {:controller => "static_pages", :action => "home", :key => "northern" }%>
                                 </li>
                                 <li>
-                                    <a href="#">Central</a>
+                                    <%= link_to"Central", {:controller => "static_pages", :action => "home", :key => "central" }%>
                                 </li>
                                 <li>
-                                    <a href="#">South</a>
+                                    <%= link_to"South", {:controller => "static_pages", :action => "home", :key => "south" }%>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><i class="fa fa-newspaper-o fa-fw"></i>Latest Sceneries</a>
+                            <%= link_to"Latest Sceneries", {:controller => "static_pages", :action => "home", :key => "latest-sceneries" }%>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><i class="fa fa-heart fa-fw"></i>Most popular Sceneries</a>
+                            <%= link_to"Most popular Sceneries", {:controller => "static_pages", :action => "home", :key => "most-popular-sceneries" }%>
                         </li>
                         <li>
                             <a href="javascript:void(0)"><i class="fa fa-phone fa-fw"></i>Request</a>
@@ -63,11 +63,10 @@
                     <h2 class="title text-center"><%= @titles %></h2>
                 </div>
                 <div class="col-md-4 margin-top">
-                  <%= form_tag home_path, :method => 'get'  do %>
-                    <i class="fa fa-search fa-fw">
-                     <%= submit_tag "", :name => nil %>
+                  <%= form_tag home_path, :method => 'get', class: "form-search"  do %>
+                    <i class="fa fa-search fa-fw search">
                     </i>
-                    <%= text_field_tag :search, params[:search], hide_label: true, placeholder: 'Search sceneries'%>
+                    <%= text_field_tag :search, params[:search], hide_label: true, placeholder: 'Search sceneries' %>
                     
                   <% end %>
                 </div>
@@ -87,7 +86,7 @@
                                 <a href="" class="btn btn-custom btn-success green"><i class="fa fa-pencil fa-fw"></i>  Review</a>
             
                             </div>
-                            <h2><%= image.scenery_name %></h2>
+                            <h2 class="oneline"><%= truncate(image.scenery_name, :ommision => "... Read More", :length => 20) %></h2>
                             <h4><%= image.scenery_address %></h4>
                         </div>
                 </div>
@@ -99,6 +98,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.js"></script>
 <script type="text/javascript" src="javascript/js/home.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
